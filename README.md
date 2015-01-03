@@ -1,5 +1,5 @@
-DummyMP - Multiprocessing for Dummies!
-=======================================
+DummyMP - A multiprocessing library for dummies!
+=================================================
 
 Introduction
 -------------
@@ -130,10 +130,37 @@ If you prefer a tutorial, continue on to the documentation!
 
 Documentation
 --------------
-See [docs/][2] for a more thorough guide on how to use DummyMP.
+See [docs/README.md][2] for a more thorough guide on how to use DummyMP.
+
+Online HTML documentation can be found [here][3]
 
 API documentation can be found in all of the DummyMP source files, and
 is formatted to be accessible with pydoc.
 
+Bugs/Issues
+------------
+DummyMP is currently in beta, so there's bound to be a few bugs. Please
+report them to our [issues tracker][4].
+
+License
+--------
+    # DummyMP - Multiprocessing Library for Dummies!
+    # Copyright 2014 Albert Huang.
+    # 
+    # Licensed under the Apache License, Version 2.0 (the "License");
+    # you may not use this file except in compliance with the License.
+    # You may obtain a copy of the License at
+    # 
+    #   http://www.apache.org/licenses/LICENSE-2.0
+    # 
+    # Unless required by applicable law or agreed to in writing, software
+    # distributed under the License is distributed on an "AS IS" BASIS,
+    # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+    # implied. See the License for the specific language governing
+    # permissions and limitations under the License.
+    # 
+
 [1]: https://github.com/giampaolo/psutil
 [2]: docs/README.md
+[3]: https://pythonhosted.org/dummymp/
+[4]: https://github.com/alberthdev/dummymp/issues
