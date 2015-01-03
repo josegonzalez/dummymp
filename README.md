@@ -132,7 +132,8 @@ Documentation
 --------------
 See [docs/README.md][2] for a more thorough guide on how to use DummyMP.
 
-Online HTML documentation can be found [here][3]
+Online HTML documentation (containing both the guide and API
+documentation) can be found [here][3].
 
 API documentation can be found in all of the DummyMP source files, and
 is formatted to be accessible with pydoc.
