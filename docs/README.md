@@ -1,5 +1,9 @@
 DummyMP Documentation
 ======================
+Online HTML documentation (containing both the guide and API
+documentation) can be found here:
+
+https://pythonhosted.org/dummymp/
 
 How to use?
 ------------
