@@ -128,6 +128,107 @@ returns:
 For a more sophisticated example on how to use DummyMP, see example.py.
 If you prefer a tutorial, continue on!
 
+How to use?
+------------
+Note: Although the whole API is covered in this guide, it is not a
+      substitute for the API documentation. The API documentation can
+      be found in all of the source files, and is formatted to be
+      accessible with pydoc.
+
+### Step 0: Figure out your functions!
+The first thing to do is to figure out what functions you can
+parallelize. Functions that can run independently from other functions
+are strong candidates for parallelization. Functions that depend on
+each other's output (sequential functions) are weak candidates for
+parallelization.
+
+Functions that tend to be good candidates for parallelization include
+functions that are repeated often, usually in a loop.
+
+Note that it's not necessarily the function itself that defines if it
+can be parallelized or not, but the use of the function.
+
+Here are some examples to help explain what works and what doesn't.
+
+This is an example of a function that works great with parallelization:
+
+    def incr(n):
+        return n + 1
+    for x in range(0, 5):
+        print incr(x)
+
+This is an example of a function that will not work well with
+parallelization:
+
+    def incr(n):
+        return n + 1
+    x = 0
+    while x < 10:
+        x = incr(x)
+        print(x)
+
+Notice how the functions are exactly the same, but the usage of those
+functions determined whether it could be parallelized or not.
+
+The latter example requires the previous result before the next result
+could be computed. Because of that, you must run the code in order, and
+therefore you can not split the operation up.
+
+With the former, however, you are simply incrementing each number in
+the range. There is no dependency on any result, and therefore it's
+possible to split the operation up.
+
+If you have trouble visualizing this, try evaluating the statements.
+Let's make the function more complicated so that we can't guess
+anything.
+
+    def setn(n):
+        n = random.randint(0, n)
+        return n
+
+For the first example with the for loop, it will evaluate to:
+
+    print setn(0)
+    print setn(1)
+    print setn(2)
+    print setn(3)
+    print setn(4)
+
+For the second one, it's very different. We have no idea what the output
+will be, and the input to the function depends on the output after the
+intial run. Here's how it will look like:
+
+    x = setn(0)
+    print(x)
+    x = setn(?)
+    print(x)
+    x = setn(?)
+    print(x)
+    ...
+
+(? indicates unknown input.)
+
+Furthermore, since we have a condition set on the output, we don't even
+know when this loop will stop!
+
+In the end, the general rule for determining parallelization:
+
+  * If inputs (both variable and state, such as files) are known all of
+    the time, it is likely to work with parallelization. (This includes
+    pre-determined and static inputs.)
+  * If there is any uncertainty for the inputs (variables depends on
+    previous state, files need to be created, etc.), it is unlikely to
+    work with parallelization.
+
+To conclude, here are some applications that can be parallelized:
+
+  * Some math algorithms (matrix multiplication of a large matrix, for
+    instance)
+  * Data file processing
+  * Computing statistics from multiple data sets
+  * Rendering multiple parts of a grid (such as map image rendering)
+  * Bulk distributed database queries
+
 Optimization
 -------------
 To speed things up, it's not a bad idea to get the CPU availability
