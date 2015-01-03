@@ -19,14 +19,13 @@
 #   (library for easily running functions in parallel)
 # 
 
-from _version import *
-from loghandler import *
-from process import *
-from detect import *
-from interface import *
-from taskmgr import *
-from config import *
-
 import time
 import sys
 
+from ._version import *
+from .loghandler import *
+from .process import *
+from .detect import *
+from .interface import *
+from .taskmgr import *
+from .config import *

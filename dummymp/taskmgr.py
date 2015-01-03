@@ -20,12 +20,12 @@
 # 
 
 import logging
-import config
 import time
 from multiprocessing import Process, Queue
 
-from detect import *
-from process import _runner
+from . import config
+from .detect import *
+from .process import _runner
 
 def process_queue():
     """Process inter-process messages.

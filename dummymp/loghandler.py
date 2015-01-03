@@ -20,8 +20,9 @@
 # 
 
 import logging
-import config
 import os
+
+from . import config
 
 class DummyMPLogHandler(logging.Handler):
     """DummyMP logging handler to allow multiprocess logging.

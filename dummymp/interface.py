@@ -26,10 +26,15 @@
 
 from multiprocessing import Process, Queue
 import copy
+import sys
 
-import config
-import _version
-from taskmgr import process_queue
+from . import config
+from . import _version
+from .taskmgr import process_queue
+
+if sys.version_info[0] >= 3:
+    # This must be imported for reload() to work
+    from imp import reload
 
 def set_max_processes(max_proc):
     """Set maximum processors for DummyMP to use.

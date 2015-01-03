@@ -22,9 +22,10 @@
 import psutil
 import logging
 import datetime
-import config
 import os
 import time
+
+from . import config
 
 def poll_procs(interval):
     """Poll for processes and return information about them.
