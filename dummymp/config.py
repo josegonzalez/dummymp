@@ -29,11 +29,11 @@ import psutil
 # Job running modes
 # See set_priority_mode() documentation in interface.py for more
 # information.
-DUMMYMP_GENEROUS    = -1
-DUMMYMP_NORMAL      = -2
-DUMMYMP_AGGRESSIVE  = -3
-DUMMYMP_EXTREME     = -4
-DUMMYMP_NUCLEAR     = -9999
+DUMMYMP_GENEROUS    = 15
+DUMMYMP_NORMAL      = 0
+DUMMYMP_AGGRESSIVE  = -5
+DUMMYMP_EXTREME     = -10
+DUMMYMP_NUCLEAR     = -20
 
 # CPU Thresholds
 # Threshold to consider a process active, in terms of CPU usage %.
