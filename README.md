@@ -116,7 +116,7 @@ returns:
     #     Favorite numbers: {0: 6, 1: 4, 2: 2}
     print("Favorite numbers: %s" % str(dummymp.get_returns()))
 
-See example.py folder for examples on how to use DummyMP.
+See example.py for a full example on how to use DummyMP.
 
 Optimization
 -------------
