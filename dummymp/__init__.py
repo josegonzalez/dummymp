@@ -22,10 +22,10 @@
 import time
 import sys
 
+from .config import *
 from ._version import *
 from .loghandler import *
 from .process import *
 from .detect import *
 from .interface import *
 from .taskmgr import *
-from .config import *

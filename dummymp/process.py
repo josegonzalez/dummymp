@@ -23,8 +23,8 @@ import os
 import time
 import logging
 
-from .loghandler import *
 from . import config
+from .loghandler import *
 
 def _runner(process_id, dummymp_queue, func, *args, **kwargs):
     """Multiprocess function wrapper for running a function given args.
