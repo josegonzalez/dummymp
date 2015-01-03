@@ -31,16 +31,16 @@ def _runner(process_id, dummymp_queue, func, *args, **kwargs):
     
     This function wraps an existing function with its args, and allows 
     for additional fields related to multiprocessing. In particular, 
-    the internal process ID and the multiprocessing Queue object are 
-    added to facilitate communication between the subprocess and the 
-    master process.
+    the internal process ID and the :py:class:`multiprocessing.Queue`
+    object are added to facilitate communication between the subprocess
+    and the master process.
     
     Args:
         process_id (int): The internal process ID for the particular
             process. This is NOT the actual system process ID.
-        dummymp_queue (multiprocessing.Queue): The Queue object that 
-            the process should send data to. The Queue should be a 
-            Queue made specifically for this process.
+        dummymp_queue (:py:class:`multiprocessing.Queue`): The Queue
+            object that the process should send data to. The Queue
+            should be a Queue made specifically for this process.
         func (function): The function that the process should call.
         *args: The arguments that should be passed to the function.
     

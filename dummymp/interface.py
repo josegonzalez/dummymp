@@ -289,9 +289,9 @@ def run(func, *args, **kwargs):
     in order to actually execute the function.
     
     Args:
-        func (function) - Function to run.
-        *args - Arguments to use with the function.
-        **kwargs - Keyword arguments to use with the function.
+        func (function): Function to run.
+        args (*args): Arguments to use with the function.
+        kwargs (**kwargs): Keyword arguments to use with the function.
     """
     # We need to perform a deepcopy, since we want the original
     # arguments before running! Without a deepcopy, list, dict, and

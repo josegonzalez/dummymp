@@ -91,7 +91,8 @@ def process_process():
         completed or not. Returns True if it has completed, False if it 
         has not. This return value can be used in a while loop to block 
         until processes have completed. (This is somewhat similar to 
-        multiprocessing's join().)
+        multiprocessing's :py:meth:`multiprocessing.Process.join()` if
+        used in a loop.)
     """
     nproc = 0
     
