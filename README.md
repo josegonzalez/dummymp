@@ -1,0 +1,4 @@
+dummymp
+=======
+
+Multiprocessing for Dummies!
