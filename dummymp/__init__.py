@@ -22,7 +22,11 @@
 import time
 import sys
 
-from .config import *
+from . import config
+from .config import DUMMYMP_GENEROUS, DUMMYMP_NORMAL,     \
+                                      DUMMYMP_AGGRESSIVE, \
+                                      DUMMYMP_EXTREME,    \
+                                      DUMMYMP_NUCLEAR
 from ._version import *
 from .loghandler import *
 from .process import *
