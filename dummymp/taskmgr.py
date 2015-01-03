@@ -94,6 +94,10 @@ def process_process():
         multiprocessing's join().)
     """
     nproc = 0
+    
+    # Get main process logger
+    logger = logging.getLogger()
+    
     # Loop through processes via index!
     while nproc < len(config.dummymp_procs):
         dummymp_proc = config.dummymp_procs[nproc]
@@ -110,11 +114,17 @@ def process_process():
             pi = config.dummymp_procs.index(dummymp_proc)
             
             # Make sure to close the queue!
+            
+            # ...but first, check to make sure the queue is empty.
+            if not config.dummymp_queues[pi].empty():
+                process_queue()
+            
+            # Once we're sure, let's close things up!
             config.dummymp_queues[pi].close()
             config.dummymp_queues.pop(pi)
             config.dummymp_procs.pop(pi)
             
-            logging.debug("Process complete!")
+            logger.debug("Process complete!")
             
             # Add to the completed count and remove from running count...
             config.total_completed += 1
@@ -151,11 +161,11 @@ def process_process():
                 if ((avail_cpus == 0) and (config.total_running == 0) and (config.DUMMYMP_MODE != config.DUMMYMP_GENEROUS)):
                     # Force a single process to run!
                     avail_cpus += 1
-                    logging.debug("Not in generous mode, so forcing one task to run.")
+                    logger.debug("Not in generous mode, so forcing one task to run.")
                 
                 # Check if we have any available (or "available") CPUs!
                 if avail_cpus > 0:
-                    logging.debug("%i CPUs available, spawning process!" % avail_cpus)
+                    logger.debug("%i CPUs available, spawning process!" % avail_cpus)
                     
                     # Deincrement counter
                     avail_cpus -= 1
@@ -207,14 +217,14 @@ def process_process():
                     # from the start queue list.
                     nproc -= 1
             else:
-                logging.debug("Max processes limit of %i reached, waiting for process to terminate." % config.max_processes)
+                logger.debug("Max processes limit of %i reached, waiting for process to terminate." % config.max_processes)
             
             # Increment
             nproc += 1
     
     # Check to see if we are done!
     if len(config.dummymp_procs) == 0:
-        logging.debug("All processes complete, returning True.")
+        logger.debug("All processes complete, returning True.")
         return True
     return False
 
