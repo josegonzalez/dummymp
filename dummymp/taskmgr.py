@@ -62,7 +62,10 @@ def process_queue():
                 # Append PID info text
                 qout[1].msg = ("[PID %i] " % qout[0][1]) + qout[1].msg
                 # Emit the modified log record
-                logger.handle(qout[1])
+                # BUG: seems like logger.handle() doesn't do any
+                # filtering - therefore, we need to filter it ourselves.
+                if logger.isEnabledFor(qout[1].levelno):
+                    logger.handle(qout[1])
             elif qout[0][0] == config.DUMMYMP_RET_ID:
                 # Store return into return dictionary
                 config.dummymp_rets[qout[0][2]] = qout[1]
