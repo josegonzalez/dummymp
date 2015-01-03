@@ -50,7 +50,7 @@ DummyMP requires the following:
       multiprocessing module in order to work. We do not officially
       support Python 2.5 due to uncertainty about the multiprocessing
       module offered for older versions of Python.
-  * psutil 2.x.x
+  * [psutil 2.x.x][1]
     * Note that this is 2.x, NOT 1.x. Not many distributions carry the
       new 2.x version yet.
 
@@ -130,9 +130,10 @@ If you prefer a tutorial, continue on to the documentation!
 
 Documentation
 --------------
-See [docs/][1] for a more thorough guide on how to use DummyMP.
+See [docs/][2] for a more thorough guide on how to use DummyMP.
 
 API documentation can be found in all of the DummyMP source files, and
 is formatted to be accessible with pydoc.
 
-[1]: docs/README.md
+[1]: https://github.com/giampaolo/psutil
+[2]: docs/README.md
