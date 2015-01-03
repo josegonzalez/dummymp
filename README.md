@@ -54,6 +54,51 @@ DummyMP requires the following:
     * Note that this is 2.x, NOT 1.x. Not many distributions carry the
       new 2.x version yet.
 
+Downloads
+----------
+Releases for DummyMP can be found here:
+https://github.com/alberthdev/dummymp/releases
+
+Installation
+-------------
+### From pip (via PyPI)
+
+For a **pre-release** version (#.#a#, #.#b#, etc.), you will need to run
+this instead:
+
+    pip install --pre dummymp
+
+No stable versions have been released yet, so the above command is
+probably the one you want to use.
+
+For a stable version, simply run:
+
+    pip install dummymp
+
+### From easy_install (via PyPI)
+Simply run:
+
+    easy_install dummymp
+
+Note that easy_install can install pre-release versions without any
+additional flags.
+
+### Release Archive
+If you downloaded a release, simply extract and run:
+
+    python setup.py build
+    sudo python setup.py install
+
+If you don't have sudo, but can access sudo, you can use this command
+to install instead:
+
+    su -c python setup.py install
+
+If you don't have root access, but have a place for local Python module
+installation, you can use this:
+
+    python setup.py install --prefix=/user/python/dir
+
 Examples
 ---------
 It's really simple! Given a slow function myfunc():
