@@ -43,7 +43,16 @@ Despite being simple, DummyMP packs in many useful features:
 
 Requirements
 -------------
+DummyMP requires the following:
 
+  * Python >=2.6 (for 2.x version) or Python 3.x (all versions)
+    * NOTE: Python 2.5 can be used, but it requires the backported
+      multiprocessing module in order to work. We do not officially
+      support Python 2.5 due to uncertainty about the multiprocessing
+      module offered for older versions of Python.
+  * psutil 2.x.x
+    * Note that this is 2.x, NOT 1.x. Not many distributions carry the
+      new 2.x version yet.
 
 Examples
 ---------
