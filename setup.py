@@ -35,6 +35,7 @@ setup(
     author='Albert Huang',
     author_email='alberth + a dot + dev + at + gmail + a dot + com',
     url='https://github.com/alberthdev/dummymp',
+    download_url='https://github.com/alberthdev/dummymp/releases',
     license='Apache',
     keywords=[
         'multiprocessing', 'process', 'manager', 'task', 'manager',
