@@ -1,0 +1,4 @@
+include example.py
+recursive-include docs *.md *.rst Makefile make.bat
+recursive-include docs/html *.html *.css *.js
+recursive-include docs/scripts *
