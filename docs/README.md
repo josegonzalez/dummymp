@@ -294,7 +294,7 @@ Alright, back to regular setup:
         logging.info("Starting process! (%i running, %i/%i completed)" \
             % (total_running, total_completed, total_procs))
     
-    set_start_callback(update_start)
+    dummymp.set_start_callback(update_start)
     
     # Set the callback function when a process has completed.
     # 
@@ -308,7 +308,7 @@ Alright, back to regular setup:
         logging.info("Process done! (%i running, %i/%i completed)" \
             % (total_running, total_completed, total_procs))
             
-    set_end_callback(update_end)
+    dummymp.set_end_callback(update_end)
 
 That's it for configuration!
 
